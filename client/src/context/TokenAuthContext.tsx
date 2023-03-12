@@ -195,7 +195,7 @@ export const AuthProvider: FC<AuthProviderProps> = (props) => {
       });
     } catch (error) {
       console.error(error);
-      logout();
+      throw error;
     }
   };
 

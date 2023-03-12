@@ -36,15 +36,16 @@ const Register: NextPageWithLayout = () => {
   const onSubmit = async () => {
     try {
       const values = getValues();
-      await registerUser({
+      const res = await registerUser({
         email: values.email,
         password: values.password,
         username: values.username,
       });
-      toast({
-        title: "Success",
-        status: "success",
-      });
+      console.log(res);
+      // toast({
+      //   title: "Success",
+      //   status: "success",
+      // });
     } catch (error: any) {
       console.error(error);
       const validateError = error.response.data;
